@@ -1,0 +1,31 @@
+import getDateString from './date.js';
+//import '../styles/styles.scss';
+import image from '../images/image.jpg';
+import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import '@fortawesome/fontawesome-free/js/all';
+import '../index.html';
+
+$(document).ready( () => {
+
+    document
+    $('.js-content').html(`<i class="fas fa-air-freshener"></i> ${ getDateString() }`);
+
+    // Display the image
+    $('<img />')
+        .attr('src', image)
+        .attr('alt', 'Always provide a descriptive alt text.')
+        .appendTo('body');
+
+    // Display the Bootstrap modal window
+    $('.js-modal').modal({
+        show: true,
+        keyboard: true
+    });
+
+});
+
+
+
+
